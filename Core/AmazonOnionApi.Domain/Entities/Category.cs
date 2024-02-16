@@ -10,6 +10,10 @@ namespace AmazonOnionApi.Domain.Entities
 {
     public class Category : EntityBase
     {
+        public Category()
+        {
+               
+        }
         public Category(int parentId, string name, int priorty)
         {
             ParentId = parentId;
