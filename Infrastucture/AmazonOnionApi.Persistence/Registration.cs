@@ -1,6 +1,8 @@
 ﻿using AmazonOnionApi.Application.Interfaces.Repositories;
+using AmazonOnionApi.Application.Interfaces.UnitOfWorks;
 using AmazonOnionApi.Persistence.Context;
 using AmazonOnionApi.Persistence.Repositories;
+using AmazonOnionApi.Persistence.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +23,7 @@ namespace AmazonOnionApi.Persistence
 
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
             services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         }
     }
