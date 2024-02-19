@@ -1,4 +1,5 @@
 using AmazonOnionApi.Persistence;
+using AmazonOnionApi.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,7 @@ builder.Configuration
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
 builder.Services.AddPersistence(builder.Configuration);
-
+builder.Services.AddApplication();
 
 var app = builder.Build();
 
