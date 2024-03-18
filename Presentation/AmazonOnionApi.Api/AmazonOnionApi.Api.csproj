@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\AmazonOnionApi.Mapper\AmazonOnionApi.Mapper.csproj" />
     <ProjectReference Include="..\..\Infrastucture\AmazonOnionApi.Persistence\AmazonOnionApi.Persistence.csproj" />
   </ItemGroup>
 

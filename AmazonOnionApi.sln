@@ -9,15 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastucture", "Infrastuct
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{25155303-3F24-4FBE-A41A-FE7F4A70897F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonOnionApi.Application", "Core\AmazonOnionApi.Application\AmazonOnionApi.Application.csproj", "{C691BA24-A77A-4EC0-9F70-2FC07869FFCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazonOnionApi.Application", "Core\AmazonOnionApi.Application\AmazonOnionApi.Application.csproj", "{C691BA24-A77A-4EC0-9F70-2FC07869FFCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonOnionApi.Domain", "Core\AmazonOnionApi.Domain\AmazonOnionApi.Domain.csproj", "{E6D25B6A-5AF6-4BB9-B18B-B24396559412}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazonOnionApi.Domain", "Core\AmazonOnionApi.Domain\AmazonOnionApi.Domain.csproj", "{E6D25B6A-5AF6-4BB9-B18B-B24396559412}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonOnionApi.Infrastructure", "Infrastucture\AmazonOnionApi.Infrastructure\AmazonOnionApi.Infrastructure.csproj", "{494CBCA4-6970-4354-95EB-0370226FD4B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazonOnionApi.Infrastructure", "Infrastucture\AmazonOnionApi.Infrastructure\AmazonOnionApi.Infrastructure.csproj", "{494CBCA4-6970-4354-95EB-0370226FD4B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonOnionApi.Persistence", "Infrastucture\AmazonOnionApi.Persistence\AmazonOnionApi.Persistence.csproj", "{19A20E98-38DC-44BB-BDBC-B148BEBF0A34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazonOnionApi.Persistence", "Infrastucture\AmazonOnionApi.Persistence\AmazonOnionApi.Persistence.csproj", "{19A20E98-38DC-44BB-BDBC-B148BEBF0A34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonOnionApi.Api", "Presentation\AmazonOnionApi.Api\AmazonOnionApi.Api.csproj", "{3B70C558-6AB8-40AE-997B-524F759E5A3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazonOnionApi.Api", "Presentation\AmazonOnionApi.Api\AmazonOnionApi.Api.csproj", "{3B70C558-6AB8-40AE-997B-524F759E5A3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonOnionApi.Mapper", "Core\AmazonOnionApi.Mapper\AmazonOnionApi.Mapper.csproj", "{68223982-5563-4558-9663-A7BDE3F1D8C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{3B70C558-6AB8-40AE-997B-524F759E5A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B70C558-6AB8-40AE-997B-524F759E5A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B70C558-6AB8-40AE-997B-524F759E5A3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68223982-5563-4558-9663-A7BDE3F1D8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68223982-5563-4558-9663-A7BDE3F1D8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68223982-5563-4558-9663-A7BDE3F1D8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68223982-5563-4558-9663-A7BDE3F1D8C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{494CBCA4-6970-4354-95EB-0370226FD4B0} = {65176A57-8CC3-45BA-8CC3-53878837CF86}
 		{19A20E98-38DC-44BB-BDBC-B148BEBF0A34} = {65176A57-8CC3-45BA-8CC3-53878837CF86}
 		{3B70C558-6AB8-40AE-997B-524F759E5A3B} = {25155303-3F24-4FBE-A41A-FE7F4A70897F}
+		{68223982-5563-4558-9663-A7BDE3F1D8C8} = {B421143C-6DDA-4D2C-9BA1-C31FD626F33A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E10404A-BC66-4018-A389-45066FA00EF7}

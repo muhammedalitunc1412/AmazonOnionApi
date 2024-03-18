@@ -1,4 +1,5 @@
-﻿using AmazonOnionApi.Domain.Entities;
+﻿using AmazonOnionApi.Application.DTOs;
+using AmazonOnionApi.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace AmazonOnionApi.Application.Features.Products.Queries.GetAllProducts
         public string Description { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
+        public BrandDto Brand { get; set; }
     }
 }
