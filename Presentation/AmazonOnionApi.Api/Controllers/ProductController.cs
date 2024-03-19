@@ -1,4 +1,7 @@
-﻿using AmazonOnionApi.Application.Features.Products.Queries.GetAllProducts;
+﻿using AmazonOnionApi.Application.Features.Products.Command.CreateProduct;
+using AmazonOnionApi.Application.Features.Products.Command.DeleteProduct;
+using AmazonOnionApi.Application.Features.Products.Command.UpdateProduct;
+using AmazonOnionApi.Application.Features.Products.Queries.GetAllProducts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,41 +14,36 @@ namespace AmazonOnionApi.Api.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IMediator mediator;
+
         public ProductController(IMediator mediator)
         {
-            this.mediator = mediator; 
+            this.mediator = mediator;
         }
-        // GET: api/<ProductController>
+
         [HttpGet]
-        public async Task<ActionResult>GetAllProducts()
+        public async Task<IActionResult> GetAllProducts()
         {
             var response = await mediator.Send(new GetAllProductsQueryRequest());
+
             return Ok(response);
         }
-
-        // GET api/<ProductController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<ProductController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> CreateProduct(CreateProductCommandRequest request)
         {
+            await mediator.Send(request);
+            return Ok();
         }
-
-        // PUT api/<ProductController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost]
+        public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
         {
+            await mediator.Send(request);
+            return Ok();
         }
-
-        // DELETE api/<ProductController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPost]
+        public async Task<IActionResult> DeleteProduct(DeleteProductCommandRequest request)
         {
+            await mediator.Send(request);
+            return Ok();
         }
     }
 }

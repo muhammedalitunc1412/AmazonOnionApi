@@ -44,6 +44,9 @@ namespace AmazonOnionApi.Persistence.Repositories
             await Task.Run(() => Table.Update(entity));
         }
 
-
+        public async Task HardDeleteRangeAsync(IList<T> entity)
+        {
+            await Task.Run(() => Table.RemoveRange(entity));
+        }
     }
 }
