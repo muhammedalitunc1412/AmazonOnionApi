@@ -1,7 +1,7 @@
 using AmazonOnionApi.Persistence;
 using AmazonOnionApi.Application;
 using AmazonOnionApi.Mapper;
-
+using AmazonOnionApi.Application.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +32,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.ConfigureExceptionHandlingMiddleware();
 
 app.UseHttpsRedirection();
 
