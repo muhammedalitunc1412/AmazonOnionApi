@@ -1,5 +1,6 @@
 ﻿using AmazonOnionApi.Application.Interfaces.Repositories;
 using AmazonOnionApi.Application.Interfaces.UnitOfWorks;
+using AmazonOnionApi.Domain.Entities;
 using AmazonOnionApi.Persistence.Context;
 using AmazonOnionApi.Persistence.Repositories;
 using AmazonOnionApi.Persistence.UnitOfWorks;
@@ -24,6 +25,18 @@ namespace AmazonOnionApi.Persistence
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
             services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddIdentityCore<User>(opt =>
+            {
+                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequiredLength = 2;
+                opt.Password.RequireLowercase = false;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequireDigit = false;
+                opt.SignIn.RequireConfirmedEmail = false;
+            })
+                .AddRoles<Role>()
+                .AddEntityFrameworkStores<AppDbContext>();
 
         }
     }
