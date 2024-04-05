@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace AmazonOnionApi.Application.Interfaces.Tokens
 {
-    public interface ITokenService
+   public interface ITokenService
     {
         Task<JwtSecurityToken> CreateToken(User user, IList<string> roles);
         string GenerateRefreshToken();
-        ClaimsPrincipal? GetPrincipalFromExpiredToken();
+        ClaimsPrincipal? GetPrincipalFromExpiredToken(string? token);
     }
  
 }
