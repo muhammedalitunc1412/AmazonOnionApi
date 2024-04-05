@@ -1,5 +1,6 @@
 using AmazonOnionApi.Persistence;
 using AmazonOnionApi.Application;
+using AmazonOnionApi.Infrastructure;
 using AmazonOnionApi.Mapper;
 using AmazonOnionApi.Application.Exceptions;
 
@@ -20,6 +21,7 @@ builder.Configuration
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
 
