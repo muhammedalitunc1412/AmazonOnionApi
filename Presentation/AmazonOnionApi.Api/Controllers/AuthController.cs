@@ -1,4 +1,5 @@
 ﻿using AmazonOnionApi.Application.Bases;
+using AmazonOnionApi.Application.Features.Auth.Command.Login;
 using AmazonOnionApi.Application.Features.Auth.Command.Register;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -22,6 +23,13 @@ namespace AmazonOnionApi.Api.Controllers
         {
             await mediator.Send(request);
             return StatusCode(StatusCodes.Status201Created);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginCommandRequest request)
+        {
+            var response = await mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK, response);
         }
     }
 }

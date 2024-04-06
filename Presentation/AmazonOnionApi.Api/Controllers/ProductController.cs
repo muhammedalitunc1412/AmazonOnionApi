@@ -3,6 +3,7 @@ using AmazonOnionApi.Application.Features.Products.Command.DeleteProduct;
 using AmazonOnionApi.Application.Features.Products.Command.UpdateProduct;
 using AmazonOnionApi.Application.Features.Products.Queries.GetAllProducts;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -21,6 +22,7 @@ namespace AmazonOnionApi.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllProducts()
         {
             var response = await mediator.Send(new GetAllProductsQueryRequest());
