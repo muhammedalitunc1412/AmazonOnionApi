@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AmazonOnionApi.Application.Interfaces.RedisCache;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,10 @@ using System.Threading.Tasks;
 
 namespace AmazonOnionApi.Application.Features.Products.Queries.GetAllProducts
 {
-    public class GetAllProductsQueryRequest:IRequest<IList<GetAllProductsQueryResponse>>
+    public class GetAllProductsQueryRequest : IRequest<IList<GetAllProductsQueryResponse>>, ICacheableQuery
     {
+        public string CacheKey => throw new NotImplementedException();
+
+        public double CacheTime => throw new NotImplementedException();
     }
 }

@@ -1,14 +1,13 @@
-﻿using AmazonOnionApi.Application.Interfaces.Tokens;
+﻿using AmazonOnionApi.Application.Interfaces.RedisCache;
+using AmazonOnionApi.Application.Interfaces.Tokens;
+using AmazonOnionApi.Infrastructure.RedisCache;
 using AmazonOnionApi.Infrastructure.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace AmazonOnionApi.Infrastructure
 {
@@ -18,6 +17,9 @@ namespace AmazonOnionApi.Infrastructure
         {
             services.Configure<TokenSettings>(configuration.GetSection("JWT"));
             services.AddTransient<ITokenService, TokenService>();
+
+            services.Configure<RedisCacheSettings>(configuration.GetSection("RedisCacheSettings"));
+            services.AddTransient<IRedisCacheService, RedisCacheService>();
 
             services.AddAuthentication(opt =>
             {
@@ -37,6 +39,11 @@ namespace AmazonOnionApi.Infrastructure
                     ValidAudience = configuration["JWT:Audience"],
                     ClockSkew = TimeSpan.Zero
                 };
+            });
+            services.AddStackExchangeRedisCache(opt =>
+            {
+                opt.Configuration = configuration["RedisCacheSettings:ConnectionString"];
+                opt.InstanceName = configuration["RedisCacheSettings:InstanceName"];
             });
         }
     }
